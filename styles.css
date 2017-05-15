@@ -13,8 +13,133 @@ body {
   margin: 0;
   width: 100%;
 }
+body::after{
+ content: '';
+ display: table;
+ clear: both;
+}
+
+h1 {
+  color: #ffffff;
+  font-size: 70px;
+  margin-bottom: 50px;
+  margin-top: 0;
+  text-align: center;
+}
+
+h2 {
+  color: #455a64;
+  font-size: 28px;
+  margin-bottom: 17px;
+  margin-top: 0;
+}
 
 img {
-  height: 20px;
-  width: 20px;
+  height: 50px;
+  margin-left: 0px;
+  margin-right: 0px;
+  width: 95px;
+}
+
+
+.main-container {
+  background-color: #455a64;
+  display: flex;
+  flex-direction: column;
+  float: left;
+  height: 100%;
+  justify-content: center;
+  width: 50%;
+}
+
+.articles-container {
+  background-color: #cfd8dc;
+  overflow: scroll;
+  float: right;
+  height: 100%;
+  padding: 25px;
+  width: 50%;
+}
+
+input {
+  border: 0;
+  display: block;
+  height: 45px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+}
+
+.linked-input {
+  margin-bottom: 45px;
+  font-size: 25px;
+  padding-left: 10px;
+}
+.linked-input::-webkit-input-placeholder{
+  color:#cfd8dc;
+}
+
+button {
+  background-color: inherit;
+  border: 0;
+  color: #455a64;
+  font-size: 15px;
+  margin-top: 10px;
+  text-decoration: underline;
+  text-decoration-color: #f2f4f4;
+}
+
+button:hover {
+  font-weight: 800;
+  text-decoration-color: #ffc107;
+}
+.read-button {
+  float:left;
+}
+
+.delete-button {
+  float: right;
+}
+
+.bookmarks {
+  background-color: #ffffff;
+  border:  2px solid #607d8b;
+  margin-bottom: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 17px;
+  }
+
+.bookmarks::after {
+  content: '';
+  display: table;
+  clear: both;
+ }
+
+.bookmark-url {
+  border-bottom: 1px solid #cfd8dc;
+  border-top: 1px solid #cfd8dc;
+  color: #607d8b;
+  font-size: 22px;
+  margin: 0;
+  padding-bottom: 17px;
+  padding-top: 17px;
+  text-decoration: underline;
+  text-decoration-color: #f2f4f4;
+}
+
+.bookmark-url:hover {
+    font-weight: 800;
+    text-decoration-color: #ffc107;
+  }
+
+#submit {
+  background-color: #ffc107;
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 800;
+}
+
+#submit:hover {
+  background-color: #ffd773;
 }
