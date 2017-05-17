@@ -36,8 +36,8 @@ h2 {
 
 img {
   height: 50px;
-  margin-left: 0px;
-  margin-right: 0px;
+  margin-left: 8px;
+  margin-right: 13px;
   width: 95px;
 }
 
@@ -109,6 +109,18 @@ button:hover {
   margin-right: auto;
   padding: 17px;
   }
+
+.read {
+  background-color: #f2f4f4;
+  text-decoration-color: #cfd8dc;
+}
+
+.red-read-button{
+  color: #f05A28;
+  font-weight: 800;
+  text-decoration: none;
+}
+
 
 .bookmarks::after {
   content: '';
