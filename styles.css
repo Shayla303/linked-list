@@ -71,6 +71,14 @@ button:hover {
   text-decoration-color: #ffc107;
 }
 
+button:focus {
+  outline: none;
+}
+
+input:focus {
+  outline-color: #ffc107;
+}
+
 .main-container {
   background-color: #455a64;
   display: flex;
