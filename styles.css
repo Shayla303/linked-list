@@ -145,13 +145,48 @@ button:hover {
     text-decoration-color: #ffc107;
   }
 
-#submit {
+.submit-btn {
   background-color: #ffc107;
   color: #ffffff;
-  font-size: 18px;
+  font-size: 23px;
   font-weight: 800;
+  margin-bottom: 45px;
 }
 
-#submit:hover {
+.submit-btn:hover {
   background-color: #ffd773;
+}
+
+.submit-btn:disabled {
+  background-color: black;
+}
+
+.display {
+  border: 2px solid #cfd8dc;
+  background-color: #ffffff;
+  display: inline-block;
+  height: 41px;
+  margin-right: 20px;
+  padding: 8px;
+  text-align: center;
+  width: 40%;
+}
+
+div {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  padding-left: 60px;
+}
+
+#clr-read-btn {
+  display: block;
+  font-size: 23px;
+  height: 40px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 5px;
+  text-decoration: none;
+  width: 80%;
 }
