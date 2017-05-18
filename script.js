@@ -10,7 +10,8 @@ $('#submit').on('click', submitButton)
             .on('click', enableBtn)
             .on('click', bookmarksLength);
 $('#title-input, #url-input').on('input', enableBtn);
-$('#clr-read-btn').on('click', clearReadBookmarks);
+$('#clr-read-btn').on('click', clearReadBookmarks)
+                  .on('click', bookmarksLength);
 
 /*---------------------------------------
 >>>>>>>>  CONSTRUCTOR FUNCTION   <<<<<<<<
@@ -24,11 +25,11 @@ function Bookmarks(title, url) {
 /*---------------------------------------
 >>>>>>>>  FUNCTION TO APPEND BOOKMARK(OBJECT) ONTO PAGE  <<<<<<<<
 ----------------------------------------*/
-function addBookmark (holder) {
+function addBookmark(bookmark) {
   $('.articles-container').prepend(`
-    <article class="bookmarks" id="${holder.id}">
-      <h2 class= "bookmark-title">${holder.title}</h2>
-      <p class ="bookmark-url">${holder.url}</p>
+    <article class="bookmarks" id="${bookmark.id}">
+      <h2 class= "bookmark-title">${bookmark.title}</h2>
+      <p class ="bookmark-url">${bookmark.url}</p>
       <button class = "read-button">Read</button>
       <button class="delete-button">Delete</button>
     </article>`
@@ -75,7 +76,7 @@ function clearInputs() {
 }
 
 /*---------------------------------------
->>>>>>>>  FUNCTINO TO ALERT USER TO FILL ALL INPUT FIELDS  <<<<<<<<
+>>>>>>>>  FUNCTION TO ALERT USER TO FILL ALL INPUT FIELDS  <<<<<<<<
 ----------------------------------------*/
 function message() {
   alert('Please provide a title and a valid URl.');
