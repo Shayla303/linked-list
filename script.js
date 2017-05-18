@@ -1,9 +1,15 @@
+
 //eventListeners
 
-$('.articles-container').on('click','.read-button', addReadClass);
-$('.articles-container').on('click', '.delete-button', removeBookmark);
-$('#submit').on('click', theWebs);
-
+$('.articles-container').on('click','.read-button', addReadClass)
+                        .on('click','.read-button', bookmarksLength);
+$('.articles-container').on('click', '.delete-button', removeBookmark)
+                        .on('click','.delete-button', bookmarksLength);
+$('#submit').on('click', theWebs)
+            .on('click', enableBtn)
+            .on('click', bookmarksLength);
+$('#title-input, #url-input').on('input', enableBtn);
+$('#clr-read-btn').on('click', clearReadBookmarks);
 
 //this function serves as our object constructor that will allow information to be passed through. also a unique ID number will be created each time for future reference
 
@@ -61,4 +67,29 @@ function clearInputs () {
 
 function message () {
   alert('Not a valid entry,must input both fields, SUCKA!');
+  }
+
+  function enableBtn () {
+    var webTitle = $('#title-input').val();
+    var webUrl = $('#url-input').val();
+    if (webTitle !==""|| webUrl !==""){
+      $('#submit').prop('disabled', false);
+    }else if (webTitle ==="" || webUrl ===""){
+      $('#submit').prop('disabled', true);
+    }
+
+    }
+
+  //this function will display the number of cards active on the page
+  function bookmarksLength () {
+    var bookmarks = $('.bookmarks');
+    var readBookmarks = $('.read');
+    $('#bookmarks-on-page').text("Bookmarks: " + bookmarks.length);
+    $('#read-on-page').text( "Read Bookmarks: " + readBookmarks.length);
+  }
+
+//this function will clear all read bookmarks and allow us to create the eventlistener to do so
+
+  function clearReadBookmarks () {
+    $('.bookmarks').closest('.read').remove();
   }
