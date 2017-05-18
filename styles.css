@@ -15,9 +15,9 @@ body {
 }
 
 body::after{
+ clear: both;
  content: '';
  display: table;
- clear: both;
 }
 
 h1 {
@@ -52,8 +52,8 @@ h2 {
 }
 
 div {
-  width: 100%;
   margin-bottom: 20px;
+  width: 100%;
 }
 
 button {
@@ -263,6 +263,7 @@ input:focus {
     font-size: 13px;
   }
 }
+
 @media screen and (max-width: 470px) {
   h1 {
     font-size: 40px;

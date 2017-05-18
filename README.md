@@ -1,0 +1,3 @@
+## LINKED LIST ## 1705 MOD 1
+
+The objective of Linked List is to allow a user to enter a title and the title of the website keeping them organized. Perhaps for later use or to provide a listing of recommended sites to visit. Linked List had 4 phases to accomplish each one increasing in difficulty. We made it through all phases of the project, however omitting the validate url functionality of the UI. This was left out due to our lack of understanding about how to properly integrate the validation into the UI, also facing time constraints we felt it prudent to focus on our existing functionality and responsiveness. We felt very comfortable using jQuery and found it to be very easy to integrate. Linked List was a great source of learning and quite enjoyable to work on. 
