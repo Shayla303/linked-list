@@ -7,28 +7,25 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,800" rel="stylesheet">
     <link rel="stylesheet" href="normalize.css">
     <link rel="stylesheet" href="styles.css">
-    <meta
   </head>
   <body>
-  <section class = "main-container">
-   <h1>Linked<img src="images/linked-list-logo (1).svg"/>List</h1>
-   <form class="input" action="index.html" method="post">
-      <input class = "linked-input"  type="text" placeholder="Website Title" id="title-input"></input>
-      <input class= "linked-input" type="text" placeholder="Website URL" id="url-input"></input>
-      <input id = "submit" class = "submit-btn" type="submit" value = "Enter" disabled ="true"></input>
-      <!-- <input id = "clear-readbtn" class= " submit-btn" type = "submit" value = "Clear Read Bookmarks"></input> -->
-      <button type="button" name="button" class = "submit-btn" id="clr-read-btn">Clear Read Bookmarks</button>
+  <section class="main-container">
+    <h1>Linked<img src="images/linked-list-logo (1).svg"/>List</h1>
+    <form class="input" action="index.html" method="post">
+      <input class="linked-input"  type="text" placeholder="Website Title" id="title-input"></input>
+      <input class="linked-input" type="url" placeholder="Website URL" id="url-input"></input>
+      <input id="submit" class="submit-btn" type="submit" value="Enter" disabled="true"></input>
+      <button type="button" name="clear-button" class="submit-btn" id="clr-read-btn">Clear Read Bookmarks</button>
     </form>
     <div>
-     <p class = "display" id ="bookmarks-on-page"></p>
-     <p class = "display" id ="read-on-page"></p>
-   </div>
+     <p class="display" id ="bookmarks-on-page">Bookmarks: 0</p>
+     <p class="display" id ="read-on-page">Read Bookmarks: 0</p>
+     <p class="display" id="difference">Unread Bookmarks: 0</p>
+    </div>
   </section>
   <section class="articles-container">
   </section>
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-  <script type="text/javascript"src="script.js">
-
-  </script>
+  <script type="text/javascript"src="script.js"></script>
   </body>
 </html>

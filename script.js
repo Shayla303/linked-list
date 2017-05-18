@@ -1,27 +1,29 @@
 
-//eventListeners
-
+/*---------------------------------------
+>>>>>>>>  EVENT LISTENERS  <<<<<<<<
+----------------------------------------*/
 $('.articles-container').on('click','.read-button', addReadClass)
                         .on('click','.read-button', bookmarksLength);
 $('.articles-container').on('click', '.delete-button', removeBookmark)
                         .on('click','.delete-button', bookmarksLength);
-$('#submit').on('click', theWebs)
+$('#submit').on('click', submitButton)
             .on('click', enableBtn)
             .on('click', bookmarksLength);
 $('#title-input, #url-input').on('input', enableBtn);
 $('#clr-read-btn').on('click', clearReadBookmarks);
 
-//this function serves as our object constructor that will allow information to be passed through. also a unique ID number will be created each time for future reference
-
+/*---------------------------------------
+>>>>>>>>  CONSTRUCTOR FUNCTION   <<<<<<<<
+----------------------------------------*/
 function Bookmarks(title, url) {
   this.title = title;
   this.url = url;
   this.id = Date.now();
 }
 
-
-// this function is to create a new bookmark card and prepend to the page
-
+/*---------------------------------------
+>>>>>>>>  FUNCTION TO APPEND BOOKMARK(OBJECT) ONTO PAGE  <<<<<<<<
+----------------------------------------*/
 function addBookmark (holder) {
   $('.articles-container').prepend(`
     <article class="bookmarks" id="${holder.id}">
@@ -33,63 +35,79 @@ function addBookmark (holder) {
   )
 }
 
-// this function grabs info to create a new object based on the object constructor of Bookmarks above. It allows the opportunity to pass through values as created in each bookmark card.we created a new object that we can now call on the addBookmark function. we are now validating the url and webtitle to have a value, if not user will be unable to creaete an object, we also have an error that alerts the user
-
-function theWebs() {
+/*---------------------------------------
+>>>>>>>>  FUNCTION TO EXECUTE WHEN SUBMIT BTN IS CLICKED  <<<<<<<<
+----------------------------------------*/
+function submitButton() {
   event.preventDefault()
   var webTitle = $('#title-input').val();
   var webUrl = $('#url-input').val();
   var newBookmark = new Bookmarks(webTitle,webUrl);
-  if (webTitle==="" || webUrl===""){
+  if (webTitle === "" || webUrl === "") {
     message();
-  }else{
+  } else {
    addBookmark(newBookmark);
    clearInputs();
   }
 }
 
-//when the user clicks on read, there should be a class of .read added to the card
-//the background should change color and the read button should go red. the first is to add the read class to the articles card using toggleClass
-
-function addReadClass () {
+/*---------------------------------------
+>>>>>>>>  FUNCTION TO TOGGLE BETWEEN CLASSES  <<<<<<<<
+----------------------------------------*/
+function addReadClass() {
   $(this).closest('.bookmarks').toggleClass('read');
   $(this).closest('.read-button').toggleClass('red-read-button');
 }
 
-function removeBookmark () {
+/*---------------------------------------
+>>>>>>>>  FUNCTION TO REMOVE BOOKMARK FROM PAGE  <<<<<<<<
+----------------------------------------*/
+function removeBookmark() {
   $(this).closest('.bookmarks').remove();
 }
 
-function clearInputs () {
+/*---------------------------------------
+>>>>>>>>  FUNCTION TO CLEAR INPUT FIELDS  <<<<<<<<
+----------------------------------------*/
+function clearInputs() {
   $('#title-input').val("");
   $('#url-input').val("");
 }
 
-function message () {
-  alert('Not a valid entry,must input both fields, SUCKA!');
+/*---------------------------------------
+>>>>>>>>  FUNCTINO TO ALERT USER TO FILL ALL INPUT FIELDS  <<<<<<<<
+----------------------------------------*/
+function message() {
+  alert('Please provide a title and a valid URl.');
+}
+
+/*---------------------------------------
+>>>>>>>>  FUNCTION TO ENABLE/DISABLE SUBMIT BUTTON  <<<<<<<<
+----------------------------------------*/
+function enableBtn() {
+  var webTitle = $('#title-input').val();
+  var webUrl = $('#url-input').val();
+  if (webTitle !== ""|| webUrl !== "") {
+    $('#submit').prop('disabled', false);
+  } else if (webTitle ==="" || webUrl ==="") {
+    $('#submit').prop('disabled', true);
   }
+}
 
-  function enableBtn () {
-    var webTitle = $('#title-input').val();
-    var webUrl = $('#url-input').val();
-    if (webTitle !==""|| webUrl !==""){
-      $('#submit').prop('disabled', false);
-    }else if (webTitle ==="" || webUrl ===""){
-      $('#submit').prop('disabled', true);
-    }
+/*---------------------------------------
+>>>>>>>>  FUNCTION TO DISPLAY NUMBER OF BOOOKMARKS ON PAGE <<<<<<<<
+----------------------------------------*/
+function bookmarksLength() {
+  var bookmarks = $('.bookmarks').length;
+  var readBookmarks = $('.read').length;
+  $('#bookmarks-on-page').text("Bookmarks: " + bookmarks);
+  $('#read-on-page').text( "Read Bookmarks: " + readBookmarks);
+  $('#difference').text("Unread Bookmarks: " + (bookmarks - readBookmarks));
+}
 
-    }
-
-  //this function will display the number of cards active on the page
-  function bookmarksLength () {
-    var bookmarks = $('.bookmarks');
-    var readBookmarks = $('.read');
-    $('#bookmarks-on-page').text("Bookmarks: " + bookmarks.length);
-    $('#read-on-page').text( "Read Bookmarks: " + readBookmarks.length);
-  }
-
-//this function will clear all read bookmarks and allow us to create the eventlistener to do so
-
-  function clearReadBookmarks () {
+/*---------------------------------------
+>>>>>>>>  FUNCTION TO REMOVE READ BOOKMARKS FROM PAGE  <<<<<<<<
+----------------------------------------*/
+function clearReadBookmarks() {
     $('.bookmarks').closest('.read').remove();
-  }
+}

@@ -24,7 +24,7 @@ h1 {
   color: #ffffff;
   font-size: 70px;
   margin-bottom: 50px;
-  margin-top: 0;
+  margin-top: 50px;
   text-align: center;
 }
 
@@ -34,7 +34,6 @@ img {
   margin-right: 13px;
   width: 95px;
 }
-
 
 input {
   border: 0;
@@ -53,11 +52,8 @@ h2 {
 }
 
 div {
-  width: 90%;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 10px;
-  padding-left: 60px;
+  width: 100%;
+  margin-bottom: 20px;
 }
 
 button {
@@ -82,14 +78,16 @@ button:hover {
   float: left;
   height: 100%;
   justify-content: center;
+  overflow: scroll;
   width: 50%;
 }
 
 .linked-input {
-  margin-bottom: 45px;
   font-size: 25px;
+  margin-bottom: 45px;
   padding-left: 10px;
 }
+
 .linked-input::-webkit-input-placeholder{
   color:#cfd8dc;
 }
@@ -97,19 +95,19 @@ button:hover {
 .display {
   border: 2px solid #cfd8dc;
   background-color: #ffffff;
-  display: inline-block;
-  height: 41px;
-  margin-right: 20px;
+  height: 40px;
+  margin-left: auto;
+  margin-right: auto;
   padding: 8px;
   text-align: center;
-  width: 40%;
+  width: 200px;
 }
 
 .articles-container {
   background-color: #cfd8dc;
-  overflow: scroll;
   float: right;
   height: 100%;
+  overflow: scroll;
   padding: 25px;
   width: 50%;
 }
@@ -192,8 +190,89 @@ button:hover {
   width: 80%;
 }
 
-@media screen and (max-width: 1345px;) {
+@media screen and (max-width: 1040px) {
   h1 {
-    font-size:
+    font-size: 55px;
+    margin-bottom: 35px;
+  }
+
+  img {
+    height: 40px;
+    width: 70px;
+  }
+
+  .linked-input {
+    margin-bottom: 35px;
+    font-size: 20px;
+  }
+
+  .submit-btn {
+    font-size: 18px;
+    margin-bottom: 35px;
+  }
+
+  #clr-read-btn {
+    font-size: 18px;
+  }
+
+  .display {
+    font-size: 15px;
+  }
+}
+
+@media screen and (max-width: 950px) {
+  h1 {
+    font-size: 50px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .articles-container {
+    float: none;
+    width: 100%;
+  }
+
+  .main-container {
+    float: none;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 730px) {
+  .linked-input {
+    font-size: 18px;
+  }
+
+  .submit-btn {
+    font-size: 15px;
+  }
+
+  #clr-read-btn {
+    font-size: 15px;
+  }
+
+  .display {
+    font-size: 13px;
+  }
+}
+@media screen and (max-width: 470px) {
+  h1 {
+    font-size: 40px;
+  }
+
+  img {
+    height: 30px;
+    width: 50px;
+  }
+}
+
+@media screen and (max-width: 370px) {
+  h1 {
+    font-size: 25px;
+  }
+
+  img {
+    height: 20px;
+    width: 40px;
   }
 }
