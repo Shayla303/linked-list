@@ -71,8 +71,7 @@ function removeBookmark() {
 >>>>>>>>  FUNCTION TO CLEAR INPUT FIELDS  <<<<<<<<
 ----------------------------------------*/
 function clearInputs() {
-  $('#title-input').val("");
-  $('#url-input').val("");
+  $('#title-input, #url-input').val("");
 }
 
 /*---------------------------------------
@@ -88,15 +87,15 @@ function message() {
 function enableBtn() {
   var webTitle = $('#title-input').val();
   var webUrl = $('#url-input').val();
-  if (webTitle !== ""|| webUrl !== "") {
+  if (webTitle !== "" || webUrl !== "") {
     $('#submit').prop('disabled', false);
-  } else if (webTitle ==="" || webUrl ==="") {
+  } else if (webTitle === "" || webUrl === "") {
     $('#submit').prop('disabled', true);
   }
 }
 
 /*---------------------------------------
->>>>>>>>  FUNCTION TO DISPLAY NUMBER OF BOOOKMARKS ON PAGE <<<<<<<<
+>>>>>>>>  FUNCTION TO DISPLAY NUMBER OF BOOKMARKS ON PAGE <<<<<<<<
 ----------------------------------------*/
 function bookmarksLength() {
   var bookmarks = $('.bookmarks').length;
@@ -110,5 +109,5 @@ function bookmarksLength() {
 >>>>>>>>  FUNCTION TO REMOVE READ BOOKMARKS FROM PAGE  <<<<<<<<
 ----------------------------------------*/
 function clearReadBookmarks() {
-    $('.bookmarks').closest('.read').remove();
+  $('.bookmarks').closest('.read').remove();
 }
